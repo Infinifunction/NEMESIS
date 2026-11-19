@@ -8,6 +8,12 @@ Its goal is not simply to provide another AI interface, but to build a comprehen
 
 NEMESIS aims to empower users to give AI new capabilities, integrate external tools, and build their own workflows.
 
+---
+
+<img src="Banner/ProjectBanner.png" width="100%" alt="NEMESIS Banner">
+
+---
+
 ## 🧠 Core Vision
 
 In traditional AI systems, the Context Window is a significant limitation when handling long-term interactions and large amounts of information.
