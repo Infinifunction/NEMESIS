@@ -8,7 +8,7 @@ Amacı yalnızca bir yapay zekâ arayüzü sunmak değil; kullanıcıların kend
 
 NEMESIS, kullanıcıların yapay zekâya yeni yetenekler kazandırabilmesini, farklı araçlarla entegre edebilmesini ve kendi çalışma süreçlerini oluşturabilmesini hedefler.
 
-<img src="Banner/Projectbanner.png" width="100%" alt="NEMESIS Banner">
+<img src="Banner/ProjectBanner.png" width="100%" alt="NEMESIS Banner">
 
 ## 🧠 Temel Vizyon
 
