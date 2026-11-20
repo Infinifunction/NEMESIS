@@ -1,133 +1,133 @@
 # NEMESIS Frontend
 
-NEMESIS Frontend, yapay zekayı genişletilebilir ve bağlamsal bir çalışma ortamına dönüştürmeyi amaçlayan NEMESIS masaüstü uygulamasının ön yüzüdür. Arayüz React, TypeScript, Electron ve Vite üzerinde kurulu olup "Dark Premium AI Workspace" tasarım dilini kullanır.
+NEMESIS Frontend is the user interface of the NEMESIS desktop application, which aims to transform artificial intelligence into an extensible and context-aware workspace. The interface is built with React, TypeScript, Electron, and Vite, following the **"Dark Premium AI Workspace"** design language.
 
-Bu README, mevcut arayüzün geçici tanıtım belgesidir. Henüz tamamlanmamış backend ve sağlayıcı entegrasyonları için arayüz akışları bulunur; gerçek bir entegrasyon olmayan işlemler başarılı olarak sunulmaz.
+This README serves as a temporary introduction to the current interface. UI flows are provided for backend and provider integrations that are not yet complete; operations that do not have a real integration are never presented as successful.
 
-## Ne Yapılır?
+## What It Does
 
-Frontend; sohbet, otomasyon, özelleştirme, ayarlar, projeler ve oturumlar için uygulama kabuğunu sunar.
+The frontend provides the application shell for chat, automation, customization, settings, projects, and sessions.
 
-- Yeni sohbet başlatabilir ve yerel chat akışı çalıştırabilirsiniz.
-- Sidebar üzerinden Automations, Customize ve Settings sayfalarına geçebilirsiniz.
-- Projects bölümünden proje oluşturabilir ve proje çalışma alanını açabilirsiniz.
-- Sessions bölümünden Chat, GitHub, URL veya yerel klasör akışlarına ait placeholder arayüzleri açabilirsiniz.
-- Chat Composer üzerinden çok satırlı mesaj yazabilir ve Enter ile gönderebilirsiniz.
-- +, Plan, Model, Chat ve This computer kontrollerini açabilir ve seçimler yapabilirsiniz.
-- Plus, Chat ve Execution menülerinde backend bağımlı işlemler için sol alt köşede toast bildirimleri görünür.
+- Start new conversations and use the local chat flow.
+- Navigate to the Automations, Customize, and Settings pages through the sidebar.
+- Create projects from the Projects section and open their workspaces.
+- Open placeholder interfaces for Chat, GitHub, URL, or local folder workflows from the Sessions section.
+- Write multi-line messages using the Chat Composer and send them by pressing Enter.
+- Open and make selections from the +, Plan, Model, Chat, and This computer controls.
+- Display toast notifications in the bottom-left corner for backend-dependent operations in the Plus, Chat, and Execution menus.
 
-## Chat Arayüzü
+## Chat Interface
 
-Chat ekranında iki temel durum bulunur.
+The Chat screen has two primary states.
 
-### Başlangıç Durumu
+### Initial State
 
-- NEMESIS markası ana alanın merkezinde gösterilir.
-- Birleşik Composer logo ile öneri kartlarının arasında dengeli şekilde konumlanır.
-- Suggested Prompt kartları başlangıç fikirleri sunar.
-- Kartlara basıldığında öneri metni Composer'a aktarılır.
+- The NEMESIS brand is displayed in the center of the main area.
+- The unified Composer is positioned between the logo and the suggestion cards for a balanced layout.
+- Suggested Prompt cards provide starting ideas.
+- Clicking a card transfers its suggested text into the Composer.
 
-### Aktif Sohbet Durumu
+### Active Chat State
 
-- İlk mesaj gönderildiğinde logo ve öneri kartları kaldırılır.
-- Mesaj geçmişi görünür hale gelir.
-- Yeni mesajlar geldikçe konuşma alanı otomatik olarak aşağı kaydırılır.
-- Composer, ekranın alt kısmında yatay olarak merkezlenir.
+- Once the first message is sent, the logo and suggestion cards are removed.
+- The conversation history becomes visible.
+- The conversation area automatically scrolls to the bottom as new messages arrive.
+- The Composer remains horizontally centered at the bottom of the screen.
 
 ## Chat Composer
 
-Composer tek bir iki katmanlı bileşendir:
+The Composer is a single, integrated, two-layer component:
 
-- Üst kısımda çok satırlı mesaj alanı bulunur.
-- Alt sol tarafta +, Plan ve Default kontrolleri bulunur.
-- Alt sağ tarafta mikrofon placeholder ve gönderme butonu bulunur.
-- Composer'ın altında Chat ve This computer seçimleri bulunur.
-- Enter mesaj gönderir; Shift+Enter yeni satır ekler.
+- The upper section contains a multi-line message input.
+- The bottom-left section contains the +, Plan, and Default controls.
+- The bottom-right section contains a microphone placeholder and a send button.
+- Chat and This computer selectors are positioned below the Composer.
+- Pressing Enter sends the message; Shift+Enter inserts a new line.
 
-Frontend state'i içinde yönetilen seçimler:
+Selections managed within the frontend state:
 
-- Plan mode: Interactive, Plan veya Autopilot
-- Tool permissions: Always ask, Assisted veya Approve all
+- Plan mode: Interactive, Plan, or Autopilot
+- Tool permissions: Always ask, Assisted, or Approve all
 - Chat mode
 - Execution environment
 - Model Fusion toggle placeholder
 
-GitHub, URL, yerel klasör, model sağlayıcıları ve cloud environment akışları henüz backend'e bağlı değildir. Bu nedenle bağlantı gerektiren seçenekler yalnızca arayüz akışı sunar ve toast bildirimlerinde gerçek bir entegrasyon olduğu iddiası yapılmaz.
+GitHub, URL, local folder, model providers, and cloud environment workflows are not yet connected to the backend. Therefore, options requiring these integrations only provide UI flows, and toast notifications do not claim that real integrations are available.
 
-## Tasarım Sistemi
+## Design System
 
-Frontend mevcut NEMESIS koyu tasarım dilini kullanır:
+The frontend uses the existing NEMESIS dark design language:
 
-- Ana arka plan: `#111315`
+- Main background: `#111315`
 - Sidebar: `#171A1D`
-- İkincil yüzeyler: `#1D2125`
-- Kartlar ve giriş alanları: `#24282C`
-- Ana metin: `#F0F0F0`
-- İkincil metin: `#92989F`
-- Vurgu rengi: `#E5484D`
+- Secondary surfaces: `#1D2125`
+- Cards and input fields: `#24282C`
+- Primary text: `#F0F0F0`
+- Secondary text: `#92989F`
+- Accent color: `#E5484D`
 
-Arayüz Lucide ikonları, odak görünümleri, hover durumları, kısa geçişler ve 320px alt sınırına sahip responsive masaüstü düzeniyle hazırlanmıştır.
+The interface features Lucide icons, focus states, hover interactions, subtle transitions, and a responsive desktop layout with a minimum width of 320px.
 
-## Bileşen Yapısı
+## Component Structure
 
-Önemli renderer bileşenleri:
+Key renderer components:
 
-- `Sidebar`: Ana navigasyon, Projects, Sessions ve hesap alanı
-- `ChatLayout`: Başlangıç ve aktif sohbet yerleşimleri
-- `ChatComposer`: Bütünleşik chat giriş alanı
-- `ComposerMenus`: Plus, Chat, Environment, Plan ve Model menüleri
-- `SuggestedPrompts`: Başlangıç öneri kartları
-- `ToastViewport`: Tekrarlanabilir bildirim sistemi
-- `PlaceholderPage`: Backend bağımlı veya henüz hazır olmayan alanlar
+- `Sidebar`: Main navigation, Projects, Sessions, and account section
+- `ChatLayout`: Initial and active chat layouts
+- `ChatComposer`: Integrated chat input component
+- `ComposerMenus`: Plus, Chat, Environment, Plan, and Model menus
+- `SuggestedPrompts`: Initial suggestion cards
+- `ToastViewport`: Reusable notification system
+- `PlaceholderPage`: Backend-dependent or not-yet-ready sections
 
-## Proje Yapısı
+## Project Structure
 
 ```text
 src/
   main/
-    Electron ana süreç kodu
+    Electron main process code
   preload/
-    Renderer ile kontrollü Electron API sınırı
+    Controlled API boundary between the renderer and Electron
   renderer/src/
     App.tsx
     components/
     assets/
 ```
 
-Renderer sürecine doğrudan Node.js veya ayrıcalıklı Electron API erişimi verilmez.
+The renderer process is not given direct access to Node.js or privileged Electron APIs.
 
-## Gereksinimler
+## Requirements
 
-- Node.js ve npm
-- Windows, macOS veya Linux için uygun Electron geliştirme ortamı
+- Node.js and npm
+- A suitable Electron development environment for Windows, macOS, or Linux
 
-## Kurulum
+## Installation
 
-Frontend klasöründe bağımlılıkları kur:
+Install dependencies in the frontend directory:
 
 ```bash
 npm install
 ```
 
-## Geliştirme
+## Development
 
-Uygulamayı Electron geliştirme modunda çalıştır:
+Run the application in Electron development mode:
 
 ```bash
 npm run dev
 ```
 
-Vite Electron geliştirme sunucusu ile birlikte renderer değişikliklerini canlı olarak yükler.
+Vite runs alongside the Electron development server and automatically reloads renderer changes.
 
-## Kontroller
+## Checks
 
-TypeScript kontrollerini çalıştır:
+Run TypeScript checks:
 
 ```bash
 npm run typecheck
 ```
 
-Lint kontrolü:
+Run lint checks:
 
 ```bash
 npm run lint
@@ -139,7 +139,7 @@ Production build:
 npm run build
 ```
 
-Platform paketleri:
+Platform-specific packages:
 
 ```bash
 npm run build:win
@@ -147,11 +147,11 @@ npm run build:mac
 npm run build:linux
 ```
 
-## Mevcut Teknik Sınırlar
+## Current Technical Limitations
 
-- Sohbet yanıtları şimdilik yerel önizleme davranışıdır.
-- GitHub, URL ve yerel klasör seçimi gerçek dosya veya repository içe aktarması yapmaz.
-- Cloud environment, model listesi ve araç izinleri gerçek sağlayıcılarla bağlı değildir.
-- Otomasyon, Customize ve Settings alanları genişletilebilir placeholder sayfalardır.
+- Chat responses currently use local preview behavior.
+- GitHub, URL, and local folder selection do not perform actual file or repository imports.
+- Cloud environments, model lists, and tool permissions are not connected to real providers.
+- Automations, Customize, and Settings are extensible placeholder pages.
 
-Bu sınırlar arayüzün geçici davranışlarıdır ve backend entegrasyonu eklenene kadar gerçek başarı olarak sunulmaz.
+These limitations reflect the temporary behavior of the interface and are not presented as successful operations until the corresponding backend integrations are implemented.
