@@ -22,7 +22,7 @@ See the original repository for the complete license text.
 - **Project:** [anthropics/skills](https://github.com/anthropics/skills)
 - **Author:** [Anthropics, Inc.](https://github.com/anthropics)
 - **Used Skills:**
-- [academy-guide](https://github.com/anthropics/skills/tree/main/skills/academy-guide) **License:** [Apache License Version 2.0](https://github.com/anthropics/skills/blob/main/- skills/academy-guide/LICENSE.txt)
+- [academy-guide](https://github.com/anthropics/skills/tree/main/skills/academy-guide) **License:** [Apache License Version 2.0](https://github.com/anthropics/skills/blob/main/skills/academy-guide/LICENSE.txt)
 - [algorithmic-art](https://github.com/anthropics/skills/tree/main/skills/algorithmic-art) **License:** [Apache License Version 2.0](https://github.com/anthropics/skills/blob/main/skills/algorithmic-art/LICENSE.txt)
 - [brand-guidelines](https://github.com/anthropics/skills/tree/main/skills/brand-guidelines) **License:** [Apache License Version 2.0](https://github.com/anthropics/skills/blob/main/skills/brand-guidelines/LICENSE.txt)
 - [canvas-design](https://github.com/anthropics/skills/tree/main/skills/canvas-design) **License:** [Apache License Version 2.0](https://github.com/anthropics/skills/blob/main/skills/canvas-design/LICENSE.txt)
